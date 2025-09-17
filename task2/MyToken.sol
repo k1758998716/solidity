@@ -25,7 +25,7 @@ contract MyToken {
     // 构造函数 初始化合约者、合约者代币数量、代币总数
     constructor(uint256 initialSupply) {
         owner = msg.sender;
-        _mint(msg.sender, initialSupply);
+        mint(msg.sender, initialSupply);
     }
 
     // 前置校验
@@ -55,7 +55,7 @@ contract MyToken {
         return true;
     }
 
-    // 授权函数
+    // 初始化
     function mint(address to, uint256 amount) public onlyOwner {
         _mint(to, amount);
     }
